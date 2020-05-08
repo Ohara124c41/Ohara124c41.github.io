@@ -3,7 +3,7 @@ Hux Blog
 
 ### [View Live Hux Blog &rarr;](https://ohara124c41.github.io/)  
 
-![](http://https://ohara124c41.github.io/img/m4-c.jpg)
+![](https://ohara124c41.github.io/img/m4-c.jpg)
 
 
 Boilerplate (beta)
@@ -17,7 +17,7 @@ Want to clone a boilerplate instead of my buzz blog? Here comes this!
 $ git clone git@github.com:Huxpro/huxblog-boilerplate.git
 ```
 
-**[View Boilerplate Here &rarr;](http://https://ohara124c41.github.io//huxblog-boilerplate/)**
+**[View Boilerplate Here &rarr;](http://https://ohara124c41.github.io/huxblog-boilerplate/)**
 
 
 Porting 
