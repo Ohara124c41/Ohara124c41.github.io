@@ -1,7 +1,7 @@
 # Site settings
 title: Ohara's Blog
 SEOTitle: Ohara's Blog
-header-img: img/m4-c.jpg
+header-img: https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/img/m4-c.jpg?raw=true
 email: c.a.ohara@tue.nl
 description: "Space Roboticist and Cybernetitian"
 keyword: "Robotics, AI"
