@@ -3,7 +3,7 @@ Hux Blog
 
 ### [View Live Hux Blog &rarr;](https://ohara124c41.github.io/)  
 
-![](https://ohara124c41.github.io/img/m4-c.jpg)
+![]("https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/img/m4-c.jpg?raw=true")
 
 
 Boilerplate (beta)
