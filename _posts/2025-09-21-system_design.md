@@ -17,6 +17,10 @@ Finite State Machines (FSMs) and logic controllers are core abstractions in syst
 
 ### FSM
 
+**FSM Diagram:**  
+![FSM Diagram](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/FSM.jpg?raw=true)
+
+
 The first figure shows a Moore FSM with three states:
 
 - **IDLE**: outputs $(T, A) = (0, 0)$  
@@ -38,12 +42,13 @@ if IDLE = 1 ∧ t = 3
 
 In addition, we model a simple watchdog-like feedback: if the FSM remains in IDLE for three consecutive updates, an **UPDATE counter** increments until $t = 3$. At that point, the FSM forces $MODE = 1$ internally and transitions to RUN. This mechanism is not unlike what one might implement with flip-flops or timers in real circuits—hardware that monitors “excessive idleness” and forces a task ready signal.
 
-**FSM Diagram:**  
-![FSM Diagram](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/FSM.jpg?raw=true)
 
 ---
 
 ### Logic Controller
+
+**Logic Diagram:**  
+![Logic Diagram](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/MATI.jpg?raw=true)
 
 The second figure shows the combinational logic controller. Its job is to enforce mask conditions and produce an encoded system code. It receives $(T, A)$ from the FSM and two mask signals:
 
@@ -64,9 +69,6 @@ $$
 
 This “system code” is the kind of integer that might be passed to a higher-level scheduler, bus, or diagnostics module. The structure illustrates how FSMs and combinational logic compose naturally: one block captures abstract behavior, the other enforces masking, priorities, and arithmetic encodings.
 
-**Logic Diagram:**  
-**FSM Diagram:**  
-![Logic Diagram](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/MATI.jpg?raw=true)
 
 ---
 
