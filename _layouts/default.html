@@ -1,35 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title | default: site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include head.html %}
 
-  <!-- MathJax v3 configuration -->
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$','$$'], ['\\[','\\]']],
-        processEscapes: true,
-        tags: 'ams'
-      },
-      options: {
-        skipHtmlTags: ['script','noscript','style','textarea','pre','code']  // don’t render inside code blocks
-      }
-    };
-  </script>
-  <!-- MathJax v3 -->
-  <script async id="MathJax-script"
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
+  <!-- hack iOS CSS :active style -->
+  <body ontouchstart="">
 
-  <style>
-    /* Optional: better line-height for display math */
-    .MathJax_Display { margin: 1rem 0; }
-  </style>
-</head>
-<body>
-  {{ content }}
-</body>
+    {% include nav.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+    {%- comment -%}
+      Load MathJax v3 only if math is enabled.
+      `page-mathjax: true` (front matter) OR `site.kramdown.math_engine: mathjax`
+    {%- endcomment -%}
+    {%- if site.page-mathjax or site.kramdown.math_engine == "mathjax" -%}
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[','\\]']],
+          processEscapes: true,
+          tags: 'ams'
+        },
+        options: {
+          skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+        }
+      };
+    </script>
+    <script async id="MathJax-script"
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>.MathJax_Display{margin:1rem 0}</style>
+    {%- endif -%}
+
+    {%- comment -%}
+      If you still want the old WeChat image hack, re-add it here,
+      but use valid HTML comments (the `%` characters were not HTML).
+    {%- endcomment -%}
+    <!-- Image to hack wechat -->
+    <!-- <img src="{{ site.baseurl }}/img/icon_wechat.png" width="0" height="0" alt=""> -->
+
+  </body>
 </html>
