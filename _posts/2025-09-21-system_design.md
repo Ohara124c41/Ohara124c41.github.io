@@ -11,78 +11,90 @@ tags:
   - Design
 ---
 
-Finite State Machines (FSMs) and logic controllers are fundamental abstractions used in industrial PLCs, embedded controllers, robotics, and avionics. The diagrams below illustrate how states, transitions, and combinational logic interact to produce deterministic system codes. This post shows a worked example suitable for a system design course.
+Finite State Machines (FSMs) and logic controllers are core abstractions in system design. They appear everywhere: industrial PLCs, avionics control loops, robotics, automotive ECUs. These structures provide a disciplined way to reason about what the system should do when inputs change over time. This post develops a compact example I use in teaching, where students can see both the state-level abstraction and the low-level logic that enforces decisions.
 
 ---
 
 ### FSM
 
-The first figure is a Moore FSM with three states:
+The first figure shows a Moore FSM with three states:
 
-- **IDLE**: outputs (T, A) = (0, 0)  
-- **RUN**: outputs (T, A) = (1, 0)  
-- **HOLD**: outputs (T, A) = (0, 1)  
+- **IDLE**: outputs $(T, A) = (0, 0)$  
+- **RUN**: outputs $(T, A) = (1, 0)$  
+- **HOLD**: outputs $(T, A) = (0, 1)$  
 
-Transitions follow the rules indicated inside the diagram:  
-- If **FAULT = 1**, transition to HOLD  
-- Else if **MODE = 1**, transition to RUN  
-- Else, remain in IDLE  
+The transitions follow the rules:
 
-Additionally, if the FSM remains in IDLE for successive updates, an **UPDATE counter** advances until `t = 3`. At that time, MODE is forced to 1, triggering a transition to RUN.
+```
+if FAULT=1 → HOLD
+ else if MODE=1 → RUN
+ else → IDLE
+
+if IDLE = 1 → UPDATE
+ ++ t
+if IDLE = 1 ∧ t = 3
+ let MODE = 1 
+```
+
+In addition, we model a simple watchdog-like feedback: if the FSM remains in IDLE for three consecutive updates, an **UPDATE counter** increments until $t = 3$. At that point, the FSM forces $MODE = 1$ internally and transitions to RUN. This mechanism is not unlike what one might implement with flip-flops or timers in real circuits—hardware that monitors “excessive idleness” and forces a task ready signal.
 
 **FSM Diagram:**  
-![FSM Diagram](/_posts/FSM.jpg)
+![FSM Diagram](/_posts/img/FSM.jpg)
 
 ---
 
 ### Logic Controller
 
-The second figure shows the combinational logic controller. It receives inputs **T, A** from the FSM and **M (MaintenanceLock), I (Inhibit)** as mask signals. It produces three outputs:
+The second figure shows the combinational logic controller. Its job is to enforce mask conditions and produce an encoded system code. It receives $(T, A)$ from the FSM and two mask signals:
 
-- **B2**: OR of A with the AND of T and I  
-- **B1**: AND of T with the negations of M and A  
-- **B0**: AND of the OR gate (T + I) with the negation of A  
+- **M (MaintenanceLock)**  
+- **I (Inhibit)**  
 
-These three bits (B2, B1, B0) form an unsigned integer:
+It produces three outputs:
 
-\[
+- **B2**: $A + (T \cdot I)$  
+- **B1**: $T \cdot \overline{M} \cdot \overline{A}$  
+- **B0**: $(T + I) \cdot \overline{A}$  
+
+The three outputs form a binary-encoded system code:
+
+$$
 V = 4 \cdot B2 + 2 \cdot B1 + B0
-\]
+$$
+
+This “system code” is the kind of integer that might be passed to a higher-level scheduler, bus, or diagnostics module. The structure illustrates how FSMs and combinational logic compose naturally: one block captures abstract behavior, the other enforces masking, priorities, and arithmetic encodings.
 
 **Logic Diagram:**  
-![Logic Diagram](/_posts/MATI.jpg)
+![Logic Diagram](/_posts/img/MATI.jpg)
 
 ---
 
 ## Worked Example
 
 **Problem statement:**  
-Starting at **t = 0**, the FSM is in state **IDLE** with outputs (T, A) = (0, 0). Inputs are fixed over time: **MODE = 0, FAULT = 0, M = 0, I = 1**.  
+Starting at $t=0$, the FSM is in state IDLE with outputs $(T, A) = (0, 0)$. Inputs remain fixed over time: $MODE = 0, FAULT = 0, M = 0, I = 1$.  
 
-Evaluate the FSM and logic through three updates (t = 1, 2, 3). At **t = 3**, what is the integer value **V**? Report in the form `V = INT`.
+Evaluate the FSM and logic through three updates ($t = 1,2,3$). At $t=3$, what is the integer value $V$?
 
 ---
 
 ### Step-by-step solution
 
-1. **t = 0 → t = 1 (UPDATE):**  
-   Inputs: MODE=0, FAULT=0 ⇒ state = IDLE.  
-   Output: (T, A) = (0, 0).  
+**Step 1:**  
+At $t=0 \to 1$, the FSM sees $MODE=0, FAULT=0$. It stays in IDLE, so $(T, A) = (0, 0)$.  
 
-2. **t = 1 → t = 2:**  
-   Same inputs ⇒ state = IDLE.  
-   Output: (T, A) = (0, 0).  
+**Step 2:**  
+At $t=1 \to 2$, the same inputs keep the FSM in IDLE again. Output is still $(0, 0)$.  
 
-3. **t = 2 → t = 3:**  
-   FSM diagram rule: after three consecutive IDLE updates, MODE is set to 1.  
-   Thus at t=3, FSM transitions to RUN.  
-   Output: (T, A) = (1, 0).  
+**Step 3:**  
+At $t=2 \to 3$, the FSM has been IDLE for three cycles. The UPDATE counter forces $MODE=1$, which triggers a transition to RUN. The output becomes $(T, A) = (1, 0)$.  
 
-4. **Logic evaluation at t = 3:**  
-   - B2 = A + (T·I) = 0 + (1·1) = 1  
-   - B1 = T·¬M·¬A = 1·1·1 = 1  
-   - B0 = (T + I)·¬A = (1 + 1)·1 = 1  
-   - V = 4·1 + 2·1 + 1 = **7**  
+**Step 4:**  
+Logic evaluation at $t=3$:  
+- $B2 = A + (T \cdot I) = 0 + (1 \cdot 1) = 1$  
+- $B1 = T \cdot \overline{M} \cdot \overline{A} = 1 \cdot 1 \cdot 1 = 1$  
+- $B0 = (T + I) \cdot \overline{A} = (1 + 1) \cdot 1 = 1$  
+- $V = 4 \cdot 1 + 2 \cdot 1 + 1 = 7$  
 
 ---
 
@@ -94,11 +106,26 @@ Evaluate the FSM and logic through three updates (t = 1, 2, 3). At **t = 3**, wh
 
 ### Why this matters
 
-This example demonstrates how FSM outputs, mask inputs, and combinational logic interact in time-dependent systems. Even a simple three-state FSM with a feedback rule (MODE forced after idle cycles) illustrates:
+This example highlights several principles that graduate students should recognize in system design:
 
-1. **Abstraction:** model system behavior as discrete states.  
-2. **Compositionality:** separate state evolution (FSM) from enforcement masks (logic).  
-3. **Traceability:** map signals from diagram through updates to the encoded integer.  
-4. **Verification:** compute deterministically at each timestep.  
+1. **Feedback and history.**  
+   FSMs are often enriched with counters, timers, or flip-flops. Our UPDATE counter is a trivial version of a watchdog timer, which prevents indefinite idleness.
 
-Such workflows appear in PLC ladder logic, robotics controllers, and safety-critical industrial systems.  
+2. **Separation of concerns.**  
+   The FSM captures high-level mode behavior, while the logic controller enforces masks and computes codes. This separation makes systems analyzable and verifiable.
+
+3. **Encoding and compositionality.**  
+   FSM outputs rarely go directly to actuators. They pass through logic that encodes conditions into integer codes or bus values. This bridges state abstraction with low-level enforcement.
+
+4. **Design realism.**  
+   While the diagrams shown are minimal, in practice one could implement the IDLE counter with flip-flops, add edge detection for UPDATE, or include reset logic. Those blocks are not drawn here, but they are the natural hardware companions to the abstract diagrams.
+
+---
+
+Even a compact FSM + logic system like this reveals the core of embedded system design: time, feedback, and deterministic translation from abstract states into concrete codes.
+
+---
+
+### Exercise for readers
+
+As an extension, try recomputing the system code if **FAULT were set to 1 at $t=2$** while other inputs remain the same. How does this affect the FSM path, the logic outputs, and the final value $V$ at $t=3$? What assumptions do you need to make and which verification checks are missing?
