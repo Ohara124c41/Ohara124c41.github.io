@@ -39,7 +39,7 @@ if IDLE = 1 ∧ t = 3
 In addition, we model a simple watchdog-like feedback: if the FSM remains in IDLE for three consecutive updates, an **UPDATE counter** increments until $t = 3$. At that point, the FSM forces $MODE = 1$ internally and transitions to RUN. This mechanism is not unlike what one might implement with flip-flops or timers in real circuits—hardware that monitors “excessive idleness” and forces a task ready signal.
 
 **FSM Diagram:**  
-![FSM Diagram](/_posts/img/FSM.jpg)
+![FSM Diagram](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/FSM.jpg?raw=true)
 
 ---
 
@@ -65,7 +65,8 @@ $$
 This “system code” is the kind of integer that might be passed to a higher-level scheduler, bus, or diagnostics module. The structure illustrates how FSMs and combinational logic compose naturally: one block captures abstract behavior, the other enforces masking, priorities, and arithmetic encodings.
 
 **Logic Diagram:**  
-![Logic Diagram](/_posts/img/MATI.jpg)
+**FSM Diagram:**  
+![Logic Diagram](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/MATI.jpg?raw=true)
 
 ---
 
