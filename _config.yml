@@ -1,54 +1,46 @@
 # Site settings
-title: Ohara's Realm
-SEOTitle: Astro Ohara | Ohara's Realm
-header-img: img/m4-c.jpg
-email: ohara124c41@gmail.com
-description: "关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
-keyword: "Chris Ohara, System Architecture, System Engineering, Space Engineering, Robotics, AI, Generative Engineering"
-url: "https://ohara124c41.github.io"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+title: "Ohara's Atelier"
+SEOTitle: "Christopher O’Hara | Ohara's Atelier"
+header-img: "img/m4-c.jpg"
+email: "ohara124c41@gmail.com"
+description: "AI System Architect | Space & Robotics | Digital Twins, RL under constraints, and resilient cyber-physical systems."
+keyword: "Christopher Ohara, System Architecture, Systems Engineering, Space Engineering, Robotics, AI, Digital Twin, Generative Engineering"
+url: "https://ohara124c41.github.io"    # your host, for absolute URL
+baseurl: ""                             # e.g., '/blog' if hosted at 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true
 
-# SNS settings
+# Social
 RSS: false
-#weibo_username:     huxpro
-#zhihu_username:     huxpro
-github_username:    ohara124c41
-#twitter_username:   huxpro
-facebook_username:  oharainternational
-linkedin_username:  ohara124c41
-
-
+github_username:    "ohara124c41"
+facebook_username:  "oharainternational"
+linkedin_username:  "ohara124c41"
 
 # Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-# If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
+exclude:
+  - "less"
+  - "node_modules"
+  - "Gruntfile.js"
+  - "package.json"
+  - "README.md"
+  - "README.zh.md"
+anchorjs: true
+timezone: "America/Los_Angeles"
 
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-# make sure you have this gem installed
-# `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate]
-
-
+# Plugins (GitHub Pages–supported)
+plugins:
+  - jekyll-paginate
 
 # Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+  input: GFM
+  math_engine: mathjax        # Enable LaTeX rendering (requires MathJax script in layout)
+  math_engine_opts: {}        # Config provided via layout script tag
   syntax_highlighter_opts:
     span:
       line_numbers: false
@@ -56,66 +48,23 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-
-
-# Disqus settings
-#disqus_username: hux
-
-# Netease settings
-netease_comment: false
-
-
-
-# Analytics settings
-# Baidu Analytics 
-# ba_track_id: [your track id]
-
-# Google Analytics
-#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-#ga_domain: huangxuan.me
-
-
+# Comments / Analytics (disabled by default)
+# disqus_username: your-disqus-shortname
+# ga_tracking: ""            # e.g., G-XXXXXXXXXX (GA4)
+# ga_tracking_anonymize_ip: true
 
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
-sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
+sidebar: true
+sidebar-about-description: "For the next quantum leap"
+sidebar-avatar: "/img/avatar-ohara.jpg"  # update to an existing image path in your repo
 
 # Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
-
+featured-tags: true
+featured-condition-size: 1
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-
-
-# MathJax rendering for layout:page (e.g. post preview)
-page-mathjax: false
-
-
-
-# Friends
-#friends: [
-    #{
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
-    #    title: "乱序",
-    #    href: "http://mida.re/"
-    #},{
-    #    title: "Sherry Wu",
-    #    href: "https://xuechundesign.github.io"
-    #},{
-    #    title: "Luke 的自留地",
-    #    href: "http://hmqk1995.github.io"
-    #},{
-    #    title: "Ebn's Blog",
-    #    href: "http://ebnbin.com/"
-    #}
-#]
+# MathJax rendering flag used by some themes/layouts (safe to keep true)
+page-mathjax: true
