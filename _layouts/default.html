@@ -1,24 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% include head.html %}
+  <!-- MathJax v3 configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script','noscript','style','textarea','pre','code']  // don’t render inside code blocks
+      }
+    };
+  </script>
+  <!-- MathJax v3 -->
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
-
-    {% include nav.html %}
-
-    {{ content }}
-
-    {% include footer.html %}
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhRZWsPNs0sWCpcbHTyPyfefYmC7S8rhlmwKwGuJ2FmggsoQo3YK0Pk" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfKMxVjAK4kYFgkxQmoYBNVWVKmfFGid4Scsse7WrpkeM4Oer7F5j+AUCDd8" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBlHj/SSFYf7/r6sB2x7wO0aJpM/Ld/hT7z/t/3t/d/k/C/w/x/y/z" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
-%<!-- Image to hack wechat -->%
-%<img src="/img/icon_wechat.png" width="0" height="0" />%
-%<!-- Migrate from head to bottom, no longer block render and still work -->%
-
+  <style>
+    /* Optional: better line-height for display math */
+    .MathJax_Display { margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  {{ content }}
 </body>
-
 </html>
