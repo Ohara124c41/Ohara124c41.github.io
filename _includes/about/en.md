@@ -1,47 +1,68 @@
-> Your time is limited, so don’t waste it living someone else’s life. 
+> Hic Sunt Automata!
 
-Hi, I am _@huxpro_ (Huang, Xuan), a will-be [Facebook](https://www.facebook.com/) software engineer and a professed digital designer. My interests range from programming languages in general (type system, type-based formal verification, compiler construction, runtime system) to indurstial software engineering (web/mobile app development, user interface and UX, developer infra and DX). 
+Hi, I am Christopher Aaron O’Hara (_@ohara124c41_), an AI system architect and researcher focused on safety-critical cyber-physical systems, autonomous robotics, and digital-twin platforms. My work spans end-to-end system architecture (requirements to validated deployment), reinforcement learning for decision-making in dynamic environments, and model-based systems engineering for complex, resource-constrained, software-intensive systems. Current interests include human–robot interaction under uncertainty, resilience engineering, certified learning for autonomy, and domain-specific languages for control (IEC 61131-3/PLC) integrated with real-time scheduling and verification.
 
-In the past, I worked on [Alitrip (Fliggy)](https://www.alitrip.com/) mobile and web apps under the [Alibaba Group](https://en.wikipedia.org/wiki/Alibaba_Group), found and lead front-end infrastructure team at a unicorn startup [Beijing Weiying (WePiao)](https://www.crunchbase.com/organization/beijing-weiying-technology), and helped [Ele.me](https://en.wikipedia.org/wiki/Ele.me) to upgrade their mobile web into [the first influential PWA (progressive web app) in China](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509).
+In recent roles, I have centered my efforts on building the **Space Station OS**, a modular digital-twin ecosystem (ROS 2 + Isaac Sim + URDF validation with Omnigraph) to prototype GNC/ECLSS/EPS/COMM subsystems and to train/control free-flying robots (e.g., Int-Ball/Astrobee) in microgravity scenarios. This includes interface patterns that transform algorithmic outputs (C++/Python/ROS 2 nodes) into simulator actuation while enforcing physical and operational constraints. Complementary work leads industrial AI initiatives: predictive maintenance for high-throughput bottling (fusion of DPCA with BiLSTM-attention; supervised and semi-supervised RUL/health-status pipelines), anomaly detection with strictly separated holdouts to prevent leakage, and dual-head architectures combining unsupervised deviation scoring with labeled anomaly prediction.
 
-I studied BA, Digital Media Art at [Communication University of China](https://en.wikipedia.org/wiki/Communication_University_of_China) and MS, Computer Science at [Rochester Institute of Technology](https://en.wikipedia.org/wiki/Rochester_Institute_of_Technology), with a focus on programming languages theory and construction.
+Research contributions include dynamic multi-objective reinforcement learning for hazard-aware navigation (**DynaMRPPO**) that integrates global–local planning and information-gain objectives; adaptive sensor/filter management with meta-learning and graph attention for energy- and compute-constrained robots; and risk/awareness metrics aligned with human factors for sociotechnical collaboration. Application domains span space robotics (ISS use cases), industrial inspection (e.g., Boston Dynamics Spot risk-aware navigation), and operations optimization in chemical/nuclear-analog environments. Prior collaborative work includes engagements with **NASA Ames** (airspace separation management), **Siemens** (COGENT generative/concurrent engineering), **ESA**, **CERN**, and **Volvo**. Most recently, I served as a **faculty member/AI researcher at the University of Tokyo (RCAST)**, working projects at the intersection of digital twins, autonomy, and traditional control systems.
 
+Education comprises a **PhD in Aeronautics & Astronautics** (University of Tokyo, AI Lab, 2024), an **EngD in Software Technology** (TU Eindhoven, 2021), MSc degrees in Embedded Systems/Mechatronics/ICT Innovation (TU/e, TU Berlin, NJIT), and an undergraduate background in Philosophy, Science, Technology & Society (Cal Poly Pomona). This interdisciplinary training anchors a practice that unifies formal methods, learning-based control, and human-centered systems engineering.
 
-##### My Programming Languages Spectrum
+---
 
-I generally prefer languages that are close to ML ("Meta Language"), i.e. _mostly functional programming_. This should explain most of my picks e.g. JavaScript within dynamically-typed's, Scala within JVM's, Rust within unmanaged's. Other preferences such as typed over untyped, expressive over limited are no-brainers.
+### Selected Projects & Contributions
 
-> __Left-right__ is how much I prefer it.  __Top-down__ is how much I know it. __Versions__ are lower bounds.
+- **Space Station OS (Digital-Twin Platform):** Modular ROS 2 package ecosystem with Isaac Sim/URDF validation and subsystem interfaces (GNC/ECLSS/EPS/COMM). Emphasizes extensibility, microservice-style boundaries, and CI-ready design for multi-team collaboration.  
+- **ISS/Int-Ball Microgravity Simulator:** Low-fidelity but dynamics-faithful environment for safe navigation, task completion, and certified learning under operational constraints (sensor realism, airflow, microgravity).  
+- **Adaptive Sensor/Filter Management for Space Robots:** GAT-based fusion with few-shot/meta-learning to reduce energy/CPU usage while maintaining situational awareness; validated on Astrobee-class platforms.  
+- **Hazard-Aware Navigation via DynaMRPPO:** Graph-based, multi-reward RL integrating information gain, terrain handling, and hazard avoidance; improved success rates over standard PPO in complex terrains.  
+- **Industrial Predictive Maintenance:** Valve-level DPCA features + BiLSTM-attention fusion for anomaly detection and RUL; rigorous holdout by valve, semi-supervised clustering for unlabeled segments, dual-model decision fusion (regressor + classifier).  
+- **Risk/Resilience Metrics & Human Factors:** Definitions and metrics aligning robustness/resilience with operator expectations; sociotechnical framing for human–machine teaming in ISS and process-plant analogs.  
+- **Generative/Concurrent Engineering (COGENT):** Methods and tooling for large-scale, multi-disciplinary engineering workflows.
 
-|     | 💔️           | ❤️ ️                 | ❤️❤️ ️                     | ❤️❤️❤️ ️               |
-| --- | ------------- | -------------------- | -------------------------- | ---------------------- |
-| 😅  | `PHP` `BASIC` | `C` `ObjC` `Prolog`  | `Kotlin` `Dart` `Asm`     | `Swift` `Agda` `Idris` |
-| 🧐  |               | `C++` `Hack` `Lisp*` | `C++11` `C#` `AS3`         | `Scala` `Rust`         |
-| 😏  | `Shell`       | `Java` `Python`      | `TypeScript` `Flow` `Wasm` | `Haskell` `Coq` `ML*`  |
-| 🤓  |               | `JavaScript`         | `EcmaScript6`              | `λ` `Λ` `Π` `Σ`        |
+---
 
-> __`ML*`__: `OCaml` `ReasonML` `Standard ML`  
-> __`Lisp*`__: `Clojure` `Scheme` `Racket`
+### Research & Engineering Interests
 
+Programming language design for controls (DSLs for PLCs, static analysis for timing/safety), RL under constraints, multi-agent coordination, certified learning and gray-box hybrid modeling, system identification for digital twins, and MBSE/SysML-inspired architecture artifacts (IBDs, package/object diagrams) to bridge teams across electrical, mechanical, and software disciplines.
 
-##### Talks
+---
 
-- [Upgrading to Progressive Web Apps][9] · [JSConf China Shanghai 2017](http://2017.jsconf.cn/)
-- Building Progressive Web Apps · [CSDI Guangzhou 2017](http://www.csdisummit.com/)
-- The State of Progressive Web App · GDG IO Redux Beijing 2017
-- PWA Rehashing · Baidu HQ Beijing 2017
-- [Service Worker 101][5] · GDG DevFest Beijing 2016
-- [Progressive Web Apps][4] · QCon Shanghai 2016
-- Progressive Web App in my POV · GDG IO Redux Beijing 2016
-- [CSS Still Sucks 2015][2] · 2015
-- [JavaScript Modularization Journey][1] · 2015
+### Education
 
-[1]: //huangxuan.me/2015/07/09/js-module-7day/
-[2]: //huangxuan.me/2015/12/28/css-sucks-2015/
-[3]: //huangxuan.me/2016/06/05/pwa-in-my-pov/
-[4]: //huangxuan.me/2016/10/20/pwa-qcon2016/
-[5]: //huangxuan.me/2016/11/20/sw-101-gdgdf/
-[6]: https://yanshuo.io/assets/player/?deck=58ac8598b123db0067292f92 "PWA Rehashing"
-[7]: https://yanshuo.io/assets/player/?deck=593ad6fbfe88c2006a0a0d6d "The State of PWA"
-[8]: https://yanshuo.io/assets/player/?deck=594d673d570c357d0698a950 "Building PWA"
-[9]: //huangxuan.me/jsconfcn2017/
+- **PhD, Aeronautics & Astronautics (AI Lab)** — University of Tokyo, 2024  
+- **EngD, Software Technology** — TU Eindhoven, 2021
+- **MEng, Biomedical Engineering** — Colorado State University, 2022  
+- **MSc, Mathematics & Theoretical Computer Science (Embedded Systems)** — TU Eindhoven, 2020  
+- **MSc, Electrical Engineering & Computer Science (ICT Innovation)** — TU Berlin, 2019  
+- **MSc, Electrical Engineering (Mechatronics)** — New Jersey Institute of Technology  
+- **BA, Philosophy, Science, Technology & Society** — Cal Poly Pomona, 2015  
+
+---
+
+### Programming Languages Spectrum
+
+Preference increases left→right. Depth increases top→bottom. Versions indicate lower bounds.
+
+|            | Low Preference             | Medium Preference                 | High Preference                         | Very High Preference                 |
+|------------|----------------------------|-----------------------------------|-----------------------------------------|--------------------------------------|
+| **Expert** |                            |                                   | `MATLAB/Octave`                         | `Python` `C++17+`                    |
+| **Proficient** | `LaTeX` `Bash`         | `C11`                             | `Java`                                  |                                      |
+| **Working**| `SQL`                      | `JavaScript`                      | `TypeScript` `COBOL`                     | `IEC 61131-3 ST` `Ladder` (PLC)      |
+| **Exploring** | `Rust`                  | `Haskell` `OCaml` (DSL prototyping) | `Julia`                                 |                                      |
+
+> *Notes:* ROS 2 is a primary application framework (C++/Python). Familiar with real-time patterns (priority ceiling, rate-monotonic), dataflow models (SDF), and verification-adjacent workflows (tests, property checks) for safety/timing.
+
+---
+
+### Selected Highlights
+
+- **Avatarin (space robotics):** Adaptive sensor-fusion with GAT + meta-learning achieving double-digit reductions in energy/CPU usage on constrained platforms.  
+- **Tohoku Enterprise (Spot):** Graph-based, multi-reward navigation increasing success rate over PPO baselines in cluttered, hazard-rich maps.  
+- **NEC AIOps:** LLM wrappers and memory-constrained training pipelines on modest hardware.  
+- **Shibuya Kogyo (RUL/Anomaly):** 7-feature DPCA + BiLSTM-attention pipeline; strict holdouts by valve; semi-supervised extensions and dual-head modeling (unsupervised deviation + supervised anomaly).  
+- **NASA/ESA/CERN/Siemens/Volvo:** Systems-architecture and AI/controls contributions across safety-critical and industrial contexts.  
+
+---
+
+If collaboration involves digital-twin validation, autonomy under constraints, or PLC/DSL-backed controls with verifiable timing and safety, this is the locus of ongoing work.
