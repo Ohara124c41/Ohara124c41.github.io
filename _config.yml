@@ -53,6 +53,20 @@ kramdown:
 # ga_tracking: ""            # e.g., G-XXXXXXXXXX (GA4)
 # ga_tracking_anonymize_ip: true
 
+giscus:
+  enable: true
+  repo: Ohara124c41/Ohara124c41.github.io
+  repo_id: MDEwOlJlcG9zaXRvcnkxMzgwNjgwMDQ=
+  category: General
+  category_id: DIC_kwDOCDrAJM4Cvxa4
+  mapping: pathname
+  reactions: 1
+  emit_metadata: 0
+  input_position: bottom
+  theme: preferred_color_scheme   # auto-switch with user theme
+  lang: en
+
+
 # Sidebar settings
 sidebar: true
 sidebar-about-description: "For the next quantum leap"
