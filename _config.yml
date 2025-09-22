@@ -69,8 +69,8 @@ giscus:
 
 # Sidebar settings
 sidebar: true
-sidebar-about-description: "For the next quantum leap"
-sidebar-avatar: "/img/avatar-ohara.jpg"  # update to an existing image path in your repo
+sidebar-about-description: "The illusion of linearity is comforting, but I’ve yet to meet a real system that stayed linear outside the classroom."
+sidebar-avatar: "/img/ohara-headshot.png"  # update to an existing image path in your repo
 
 # Featured Tags
 featured-tags: true
