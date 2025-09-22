@@ -18,9 +18,9 @@ Biocybernetics treats living systems with the same clarity we demand of engineer
 
 ## Problem Setup (read the diagrams, not your memory)
 
-![Axon](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/NC01.png?raw=true)
+![Axon](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/NC01.jpg?raw=true)
 
-![Circuit](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/NC02.png?raw=true)
+![Circuit](https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/_posts/img/NC02.jpg?raw=true)
 
 
 **Two images to use.**  
