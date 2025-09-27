@@ -1,4 +1,17 @@
 <!-- Navigation -->
+<ul class="nav navbar-nav navbar-right">
+  <li><a href="{{ site.baseurl }}/">Home</a></li>
+
+  {% assign nav_pages = site.pages
+      | where_exp: "p", "p.title"
+      | where_exp: "p", "p.hide-in-nav != true" %}
+
+  {% assign ordered = nav_pages | sort: "nav_order" %}
+  {% for page in ordered %}
+    <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+  {% endfor %}
+</ul>
+
 {% if page.nav-style == "invert" or page.header-style == "text" %}
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
 {% else %}
