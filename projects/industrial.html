@@ -51,7 +51,6 @@ nav_order: 26
               {% else %}
                 <p>{{ post.content | strip_html | truncate: 220 }}</p>
               {% endif %}
-              {%<p><a href="{{ post.url | relative_url }}">Read the case study</a></p>%}
             </div>
           </article>
         {% endfor %}
