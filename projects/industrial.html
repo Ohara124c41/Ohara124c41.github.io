@@ -27,9 +27,17 @@ nav_order: 26
           <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="project-logo">
               {% if partner_meta and partner_meta.logo %}
-                <img src="{{ partner_meta.logo }}" alt="{{ partner_meta.name }} logo">
+                {% assign _logo = partner_meta.logo %}
+                {% if _logo contains '://' %}
+                  <img src="{{ _logo }}" alt="{{ partner_meta.name }} logo">
+                {% elsif _logo contains '/' %}
+                  <img src="{{ _logo | relative_url }}" alt="{{ partner_meta.name }} logo">
+                {% else %}
+                  <img src="{{ '/img/partners/' | append: _logo | relative_url }}" alt="{{ partner_meta.name }} logo">
+                {% endif %}
               {% endif %}
             </div>
+
             <div class="project-body">
               <h3 itemprop="name"><a itemprop="url" href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
               <p class="project-meta">
