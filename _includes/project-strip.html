@@ -1,0 +1,29 @@
+{% comment %}
+Projects strip: a compact, visible row under the hero header.
+- Shows a link to the Industrial Projects page.
+- Shows a short curated list of flagship posts, or, if you prefer automatic mode,
+  a small set of the latest industrial posts.
+Choose one of the two blocks below and remove the other.
+{% endcomment %}
+
+<!-- Manual, curated links (stable order and labeling) -->
+<div class="projects-strip">
+  <a href="/projects/industrial/">Industrial Projects</a> |
+  <a href="/2020/05/20/cern-digital-spine/">CERN</a> |
+  <a href="/2019/04/19/asml-euv-formal/">ASML</a> |
+  <a href="/2025/09/25/nn_aiops/">IIoT</a> |
+  <a href="/2025/01/15/resilience-synthesis/">Resilience</a>
+</div>
+
+{% comment %}
+<!-- Optional automatic mode: latest 5 industrial posts -->
+{% assign industrial_posts = site.posts | where_exp: "p", "p.industrial == true" | sort: "date" | reverse %}
+{% if industrial_posts and industrial_posts.size > 0 %}
+<div class="projects-strip">
+  <a href="/projects/industrial/">Industrial Projects</a> |
+  {% for p in industrial_posts limit:5 %}
+    <a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% if forloop.last == false %} | {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+{% endcomment %}
