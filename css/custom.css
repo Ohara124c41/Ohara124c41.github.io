@@ -1,0 +1,10 @@
+/* Industrial Projects page - card layout */
+.industrial-projects{margin-top:20px}
+.industrial-projects .project-card{display:grid;grid-template-columns:100px 1fr;gap:14px;padding:14px;border:1px solid #e6e6e6;border-radius:10px;margin-bottom:14px;background:#fff}
+.industrial-projects .project-logo img{max-width:100%;height:auto;display:block}
+.industrial-projects .project-body h3{margin:6px 0;font-weight:700;line-height:1.3}
+.industrial-projects .project-body h3 a{color:#404040;text-decoration:none}
+.industrial-projects .project-body h3 a:hover,.industrial-projects .project-body h3 a:focus{color:#0085a1}
+.industrial-projects .project-meta{color:#666;font-size:.95em;margin:0 0 8px 0}
+@media only screen and (max-width:600px){.industrial-projects .project-card{grid-template-columns:1fr}.industrial-projects .project-logo{text-align:center}.industrial-projects .project-logo img{max-width:90px}}
+.industrial-projects .project-logo{background:#fff;border-radius:6px;padding:6px}
