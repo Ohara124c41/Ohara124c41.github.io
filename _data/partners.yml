@@ -1,16 +1,16 @@
 cern:
   name: CERN
   url: https://home.cern/
-  logo: /assets/img/partners/cern.png
+  logo: img/partners/cern.png
 asml:
   name: ASML
   url: https://www.asml.com/
-  logo: /assets/img/partners/asml.png
+  logo: img/partners/asml.png
 esa:
   name: European Space Agency
   url: https://www.esa.int/
-  logo: /assets/img/partners/esa.png
+  logo: img/partners/esa.png
 volvo:
   name: Volvo Group
   url: https://www.volvogroup.com/
-  logo: /assets/img/partners/volvo.png
+  logo: img/partners/volvo.png
