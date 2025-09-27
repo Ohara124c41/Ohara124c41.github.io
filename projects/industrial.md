@@ -3,6 +3,7 @@ layout: pages
 title: Industrial Projects
 permalink: /projects/industrial/
 description: Case studies built with external partners. Filtered view of posts tagged as industrial.
+hide-in-nav: true
 ---
 
 <section class="industrial-projects" itemscope itemtype="https://schema.org/CollectionPage">
