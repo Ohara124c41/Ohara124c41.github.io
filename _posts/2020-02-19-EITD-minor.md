@@ -14,14 +14,17 @@ tags:
 industrial: true
 partner_key: eitdigital
 header-img: "img/partners/EIT_Digital.jpg"
+excerpt: "EIT Digital I&E Minor; LABELEDBY MVP to startup; Rennes smart-city platform; AlphaLink's Smart FC UAV control productization"
 ---
 
-> Purpose: This post explains how the Innovation and Entrepreneurship Minor in the EIT Digital Master School shaped my path as a system architect. Through three projects between 2018 and 2019 I learned how to pivot vision into MVP, align innovation with civic stakeholders, and turn a technical prototype into a product. Two of these projects became real companies and all three taught me lessons in connecting engineering with business and society.
 # From Classroom to Company My Journey Through the EIT Digital Innovation and Entrepreneurship Minor
 
 **By Christopher O'Hara**
 
 ---
+
+> Purpose: This post explains how the Innovation and Entrepreneurship Minor in the EIT Digital Master School shaped my path as a system architect. Through three projects between 2018 and 2019 I learned how to pivot vision into MVP, align innovation with civic stakeholders, and turn a technical prototype into a product. Two of these projects became real companies and all three taught me lessons in connecting engineering with business and society.
+
 
 ## Featured Interviews
 [Meet Our Students Christopher Ohara – EIT Digital](https://www.eitdigital.eu/newsroom/news/archive/meet-our-students-christopher-ohara/)  
@@ -84,36 +87,37 @@ What stood out was that innovation in civic context demands not just tech but **
 
 ---
 
-## 3 Smart FC From Prototype to Productization (October 2018 to March 2019)
 
-The final phase of the minor was the thesis project. I focused on drones and flight control. The problem was clear tuning flight controllers across varied UAV platforms is laborious error prone and inconsistent.  
+# AlphaLink Smart FC From Prototype to Productization (October 2018 to March 2019)
 
-### The Concept
-I designed Smart FC an environment allowing automated tuning real time response visualization validation workflows and integrations with existing toolchains. The vision was to lower entry barrier for UAV developers and labs.  
+The final phase of the minor was the Innovation and Entrepreneurship thesis with Project AlphaLink. The subject was drones and flight control. The challenge was that tuning flight controllers across UAV platforms is slow, error prone, and inconsistent. This is particularly problematic for small labs and startups without the resources of large companies. Our project investigated how an integrated environment could lower this barrier by combining simulation, autotuning, and commercialization strategies.
 
-### Hardships and Technical Tradeoffs
-We debated whether to build a desktop tool or a cloud platform. Desktop had latency IP control offline potential. Cloud had collaboration scalability but risk to proprietary code. Each path demanded compromise.  
+## The Concept
+Smart FC was envisioned as an environment to support automatic tuning of UAV controllers. It integrated simulation of complex behaviors, validation workflows, and visualization of responses. The objective was to provide a tool that small UAV developers and labs could adopt without the overhead of building custom infrastructures. My own contribution centered on creating digital twin simulations of UAV dynamics and control. These models provided the testing ground for demonstrating how tuning processes could be automated and validated.
 
-Intellectual property risk was real. Many UAV and control libraries are open source under restrictive licenses. We designed the architecture to modularize proprietary modules so we could avoid copyleft license contamination.  
+## Hardships and Tradeoffs
+The team had to make strategic choices. One question was whether to implement the solution as a desktop tool or as a cloud service. Desktop favored latency, IP control, and offline use, which are critical for defense and sensitive research. Cloud favored collaboration and scalability but introduced risks around security and code exposure.
 
-Designing the UI was more than aesthetics. Our research showed that too many layers or features discourage engineers. A shallow interface with one click autotuning and visual feedback was more adoptable.  
+Intellectual property was another difficulty. Many UAV control libraries are open source and governed by licenses like GPL. We addressed this by modularizing the architecture so that proprietary modules could be isolated and avoid license contamination.
 
-Pricing and licensing were hard questions. Should we use a one time license subscription or modular toolbox model We benchmarked MathWorks toolbox open source models and subscription models to find a balance.  
+The user interface was also debated. Engineers require power but resist complexity. Research showed that deep menu layers discourage adoption. We therefore emphasized a shallow interface with single click autotuning and clear visual feedback.
 
-Customer discovery was difficult. Larger drone firms were entrenched in existing toolchains. Smaller labs had limited budgets. Outreach and repeated pitches became necessary to find early adopters.  
+Pricing models were equally challenging. We studied existing approaches such as MathWorks toolboxes, subscription models, and modular licensing. Each implied different adoption patterns. Small labs tended to prefer one time licensing, while larger institutions favored recurring models that included updates and support.
 
-### Breakthrough and Outcome
-The project was successful enough that Smart FC moved beyond a thesis into a standalone company. The path from concept to startup taught me that **productization is as architectural as algorithm development**.  
+Customer discovery was slow. Larger drone companies were already tied to established toolchains. Smaller labs had limited funds. Repeated outreach was needed to identify early adopters who could validate the concept.
 
-Designing systems that real engineers adopt requires decisions about UI licensing IP performance tradeoffs and market positioning. That is the core of systems architecture in practice.
+## Breakthrough and Outcome
+The thesis provided more than a prototype. It offered a structured value analysis of how Smart FC could succeed in a competitive market. The digital twin simulations demonstrated feasibility. The business model work clarified licensing and pricing options. Together, this supported the transition from a thesis project into a standalone venture.
 
+The lesson was that productization is as much about architecture as algorithm design. A working system must consider interface design, licensing structures, IP protection, and customer adoption strategies alongside technical performance. This experience underscored that system architecture spans both the technical stack and the business ecosystem.
 ---
 
 ## Integration and Reflection
+These three projects form a coherent learning arc that reshaped how I approach systems and architecture. LABELEDBY. forced me to test assumptions in a saturated market, pivot away from an impractical vision, and validate with a real product and real customers. The Rennes summer school showed me that innovation in civic domains requires balancing technical feasibility with regulation, governance, and stakeholder alignment. Smart FC demonstrated that technical prototypes must be embedded within value analysis, licensing strategies, and simulation validation before they can become products.  
 
-These three projects form a learning arc. LABELEDBY. taught me how to pivot validate and launch a product in a saturated market. The Rennes summer school taught me stakeholder management civic constraints and cross functional alignment. Smart FC taught me how to turn research into a product with sustainable business structure.  
+My contributions across these stages reflect this progression. In LABELEDBY. I learned the discipline of scaling scope without losing ambition. In Rennes I experienced the challenges of aligning technical ideas with nontechnical actors. In Smart FC I applied digital twin simulations to validate UAV control behavior while supporting the broader analysis of market and licensing models.  
 
-As a system architect I do more than design modules and interfaces. I design systems within contexts regulatory business human societal. The I and E minor taught me that architecture must factor in ecosystems markets and value.
+As a system architect these lessons reinforced that architecture cannot be limited to interfaces and modules. It must encompass the contexts in which systems operate: markets, regulations, user adoption, and business sustainability. The Innovation and Entrepreneurship Minor demonstrated this principle by requiring both technical rigor and entrepreneurial reasoning, creating outcomes that extended beyond coursework into ventures and professional practice.
 
 ---
 
