@@ -1,0 +1,32 @@
+---
+layout: page
+title: "Contact"
+description: "Project inquiries and collaboration"
+header-img: "img/m4-c.jpg"
+nav_order: 30
+---
+
+<section class="contact-page" itemscope itemtype="https://schema.org/ContactPage">
+  <h2>Contact Information</h2>
+  <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  <p>Professional profile: <a href="{{ site.linkedin_url }}" target="_blank" rel="nofollow noopener">LinkedIn</a></p>
+  <p>Code portfolio: <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="nofollow noopener">GitHub</a></p>
+
+  <h2>Project Inquiry</h2>
+  <form class="contact-form" action="mailto:{{ site.email }}" method="post" enctype="text/plain">
+    <label for="contact-name">Name</label>
+    <input id="contact-name" name="name" type="text" required>
+
+    <label for="contact-email">Email</label>
+    <input id="contact-email" name="email" type="email" required>
+
+    <label for="contact-message">Message</label>
+    <textarea id="contact-message" name="message" rows="7" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <h2>Booking</h2>
+  <p>For discovery calls, send a short project note and preferred time windows.</p>
+  <p><a class="portfolio-cta" href="mailto:{{ site.email }}?subject=Discovery%20call%20request">Request a Discovery Call</a></p>
+</section>

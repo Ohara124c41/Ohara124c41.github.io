@@ -4,6 +4,7 @@ title: "About"
 description: "Combining Space Robotics and System Architecture"
 header-img: "https://github.com/Ohara124c41/Ohara124c41.github.io/blob/master/img/m4-c.jpg?raw=true"
 multilingual: false
+nav_order: 10
 ---
 
 {% include multilingual-sel.html %}
@@ -12,8 +13,45 @@ multilingual: false
 
 <!-- English Version -->
 <div class="en post-container">
+    <section class="about-profile" itemscope itemtype="https://schema.org/Person">
+        <img src="{{ site.sidebar-avatar | relative_url }}" alt="Christopher Aaron O'Hara profile picture" itemprop="image">
+        <div>
+            <h2 itemprop="name">Christopher Aaron O'Hara</h2>
+            <p itemprop="jobTitle">AI System Architect, Researcher, and Digital-Twin Engineer</p>
+            <p>I entered technical work through the places where formal reasoning, physical systems, and human consequences meet: robotics, controls, cyber-physical safety, and resilient infrastructure. My practice focuses on turning advanced research into systems that can be explained, validated, and operated.</p>
+        </div>
+    </section>
+
     {% capture about_en %}{% include about/en.md %}{% endcapture %}
     {{ about_en | markdownify }}
+
+    <section class="resume-section" id="resume">
+        <h2>Resume</h2>
+        <p><strong>About Me:</strong> AI system architect focused on digital twins, autonomy under constraints, formal/system validation, and resilient cyber-physical systems for robotics, space, and industrial operations.</p>
+
+        <h3>Recent Experience</h3>
+        <ul>
+            <li><strong>Faculty Member / AI Researcher, University of Tokyo RCAST:</strong> Led research connecting digital twins, autonomous robotics, resilience engineering, and traditional control systems.</li>
+            <li><strong>Space Station OS / Space Robotics Research:</strong> Built modular ROS 2 and Isaac Sim digital-twin concepts for GNC, ECLSS, EPS, COMM, and microgravity robot workflows.</li>
+            <li><strong>Industrial AI and Predictive Maintenance:</strong> Developed anomaly detection, RUL modeling, and leakage-aware validation pipelines for high-throughput industrial systems.</li>
+            <li><strong>CERN SHiP Conditions Data Platform:</strong> Served as project manager and product owner for detector-data architecture, API design, benchmarking, and QA planning.</li>
+        </ul>
+
+        <h3>Education</h3>
+        <ul>
+            <li>PhD, Aeronautics & Astronautics, University of Tokyo, 2024</li>
+            <li>EngD, Software Technology, TU Eindhoven, 2021</li>
+            <li>MEng, Biomedical Engineering, Colorado State University, 2022</li>
+            <li>MSc degrees in Embedded Systems/Mathematics, ICT Innovation, and Electrical Engineering/Mechatronics</li>
+            <li>BA, Philosophy, Science, Technology & Society, Cal Poly Pomona, 2015</li>
+        </ul>
+
+        <h3>Skills</h3>
+        <p>Python, C++17+, MATLAB/Octave, Java, SQL, JavaScript, TypeScript, Bash, LaTeX, ROS 2, Isaac Sim, model-based systems engineering, reinforcement learning, anomaly detection, formal methods, control systems, and verification-oriented documentation.</p>
+
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a> | LinkedIn: <a href="{{ site.linkedin_url }}" target="_blank" rel="nofollow noopener">linkedin.com/in/{{ site.linkedin_username }}</a></p>
+    </section>
 </div>
 
 /*

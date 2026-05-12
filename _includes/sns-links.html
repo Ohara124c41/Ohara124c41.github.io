@@ -70,10 +70,20 @@
   {% endif %}
   {% if site.linkedin_username %}
   <li>
-    <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+    <a target="_blank" href="{% if site.linkedin_url %}{{ site.linkedin_url }}{% else %}https://www.linkedin.com/in/{{ site.linkedin_username }}{% endif %}">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  {% endif %}
+  {% if site.freelance_marketplace_url %}
+  <li>
+    <a target="_blank" href="{{ site.freelance_marketplace_url }}" title="{{ site.freelance_marketplace_label }}" rel="nofollow noopener">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-briefcase fa-stack-1x fa-inverse"></i>
       </span>
     </a>
   </li>

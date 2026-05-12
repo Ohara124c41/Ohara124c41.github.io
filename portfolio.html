@@ -1,0 +1,53 @@
+---
+layout: page
+title: "Portfolio"
+description: "Selected technical projects and client-ready case studies"
+header-img: "img/m4-c.jpg"
+nav_order: 20
+---
+
+<section class="portfolio-projects" itemscope itemtype="https://schema.org/CollectionPage">
+  <p>Selected projects that demonstrate system architecture, formal verification, data platforms, and socio-technical engineering. Dates reflect the related project/article timeline.</p>
+
+  <article class="portfolio-project" itemscope itemtype="https://schema.org/CreativeWork">
+    <img src="{{ '/_posts/img/wafer_stepper.jpg' | relative_url }}" alt="Wafer stepper project visual" itemprop="image">
+    <div>
+      <h2 itemprop="name">Formal Verification of an ASML EUV Wafer Stepper</h2>
+      <p class="project-meta">Completion date: <time datetime="2019-02-14">February 14, 2019</time></p>
+      <p><strong>Goal:</strong> Model and verify safety-critical concurrency requirements for a simplified EUV wafer stepper controller.</p>
+      <p><strong>Contribution:</strong> I built the formal model, translated operational requirements into CCS, LTL, and modal mu-calculus properties, and analyzed traces for unsafe vacuum-door behavior.</p>
+      <p><strong>Deliverables:</strong> Formal specification notes, verification rationale, and a public case-study article.</p>
+      <p><strong>Skills:</strong> Formal methods, model checking, requirements analysis, safety reasoning, process algebra.</p>
+      <p><strong>Resources:</strong> CCS, LTL, modal mu-calculus, concurrency modeling, ASML-inspired manufacturing workflow.</p>
+      <p><a href="{{ '/2019/02/14/MuCalc/' | relative_url }}">Project article</a></p>
+    </div>
+  </article>
+
+  <article class="portfolio-project" itemscope itemtype="https://schema.org/CreativeWork">
+    <img src="{{ '/_posts/img/CERN00.jpg' | relative_url }}" alt="CERN detector systems project visual" itemprop="image">
+    <div>
+      <h2 itemprop="name">CERN Detector Conditions Data Platform</h2>
+      <p class="project-meta">Completion date: <time datetime="2020-05-16">May 16, 2020</time></p>
+      <p><strong>Goal:</strong> Create a reliable digital data backbone for detector conditions management in the SHiP/FairSHiP software context.</p>
+      <p><strong>Contribution:</strong> I served as project manager and product owner, shaping requirements, API behavior, database choices, CI/CD expectations, benchmarking, and quality assurance.</p>
+      <p><strong>Deliverables:</strong> Architecture documentation, API/data design, project-management artifacts, benchmarks, and a public case-study article.</p>
+      <p><strong>Skills:</strong> Product ownership, system architecture, database design, CI/CD, scientific software coordination.</p>
+      <p><strong>Resources:</strong> MongoDB, FairSHiP, REST-style API design, Git workflows, detector conditions databases.</p>
+      <p><a href="{{ '/2020/05/16/CERN/' | relative_url }}">Project article</a></p>
+    </div>
+  </article>
+
+  <article class="portfolio-project" itemscope itemtype="https://schema.org/CreativeWork">
+    <img src="{{ '/_posts/img/Tsushima-FloatingIsland.jpg' | relative_url }}" alt="Tsushima floating island concept visual" itemprop="image">
+    <div>
+      <h2 itemprop="name">Tsushima GX Floating-Island Energy Concept</h2>
+      <p class="project-meta">Completion date: <time datetime="2023-12-20">December 20, 2023</time></p>
+      <p><strong>Goal:</strong> Validate renewable-energy policy options for Tsushima Island through a technical, economic, and community-aware system concept.</p>
+      <p><strong>Contribution:</strong> I helped frame the resilient floating-solar concept, connect the design to GX/SDG requirements, and present the work for academic, local-government, and industry audiences.</p>
+      <p><strong>Deliverables:</strong> Concept visuals, stakeholder-facing presentation, policy/engineering analysis, and public write-up.</p>
+      <p><strong>Skills:</strong> Resilience engineering, energy systems, stakeholder communication, policy validation, systems thinking.</p>
+      <p><strong>Resources:</strong> Renewable-energy cost modeling, SDG mapping, Tsushima site context, SystemJD project-based learning.</p>
+      <p><a href="{{ '/2023/12/20/GX/' | relative_url }}">Project article</a></p>
+    </div>
+  </article>
+</section>

@@ -16,6 +16,9 @@ RSS: false
 github_username:    "ohara124c41"
 facebook_username:  "oharainternational"
 linkedin_username:  "ohara124c41"
+linkedin_url: "https://www.linkedin.com/in/ohara124c41"
+freelance_marketplace_url: ""
+freelance_marketplace_label: "Freelance Profile"
 
 # Build settings
 highlighter: rouge

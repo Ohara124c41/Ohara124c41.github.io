@@ -1,0 +1,34 @@
+---
+layout: page
+title: "Media"
+description: "Writing, publications, and professional field notes"
+header-img: "img/m4-c.jpg"
+nav_order: 25
+---
+
+<section class="media-page" itemscope itemtype="https://schema.org/CollectionPage">
+  <h2>Publications & Features</h2>
+  <article>
+    <h3>EIT Digital Student and Alumni Features</h3>
+    <p>Profiles covering my EIT Digital path, entrepreneurship minor, international study trajectory, and transition into systems architecture work.</p>
+    <p>
+      <a href="https://www.eitdigital.eu/newsroom/news/archive/meet-our-students-christopher-ohara/" target="_blank" rel="nofollow noopener">Meet Our Students: Christopher Ohara</a>
+      |
+      <a href="https://alumni.eitdigital.eu/article/chris-ohara-us-eu" target="_blank" rel="nofollow noopener">Chris O'Hara: From the US to the EU</a>
+    </p>
+  </article>
+
+  <h2>Professional Blog</h2>
+  <p>Recent posts on autonomy, controls, resilience engineering, and cyber-physical systems.</p>
+
+  {% assign recent_posts = site.posts | sort: "date" | reverse %}
+  {% for post in recent_posts limit:3 %}
+  <article class="media-post">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p class="project-meta">{{ post.date | date: "%Y-%m-%d" }}</p>
+    <p>{{ post.content | strip_html | truncate: 260 }}</p>
+  </article>
+  {% endfor %}
+
+  <p><a href="{{ '/archive/' | relative_url }}">Browse the full archive</a></p>
+</section>
